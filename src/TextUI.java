@@ -12,14 +12,36 @@ public class TextUI {
 
     }
 
+    private int isInteger(String text) {
+        try {
+            return Integer.parseInt(text);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
     public int inputNumRoads() {
         System.out.print("Input the number of roads: ");
-        return scanner.nextInt();
+        String input = scanner.nextLine();
+
+        while (isInteger(input) <= 0) {
+            System.out.print("Error! Incorrect Input. Try again: ");
+            input = scanner.nextLine();
+        }
+
+        return Integer.parseInt(input);
     }
 
     public int inputInterval() {
         System.out.print("Input the interval: ");
-        return scanner.nextInt();
+        String input = scanner.nextLine();
+
+        while (isInteger(input) <= 0) {
+            System.out.print("Error! Incorrect Input. Try again: ");
+            input = scanner.nextLine();
+        }
+
+        return Integer.parseInt(input);
     }
 
     public void printMenu() {
