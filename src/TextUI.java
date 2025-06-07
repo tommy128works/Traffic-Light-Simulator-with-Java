@@ -47,9 +47,9 @@ public class TextUI {
 
     public void printMenu() {
         System.out.println("Menu:");
-        System.out.println("1. Add");
-        System.out.println("2. Delete");
-        System.out.println("3. System");
+        System.out.println("1. Add road");
+        System.out.println("2. Delete road");
+        System.out.println("3. Open system");
         System.out.println("0. Quit");
     }
 
@@ -89,6 +89,12 @@ public class TextUI {
 //            clearCommand.inheritIO().start().waitFor();
 //        }
 //        catch (IOException | InterruptedException e) {}
+    }
+
+    public void printSystemState(int countSeconds, int numRoads, int interval) {
+        System.out.println("! " + countSeconds + "s. have passed since system startup !");
+        System.out.println("! Number of roads: " + numRoads + " !");
+        System.out.println("! Interval: " + interval + " !");
     }
 
 
