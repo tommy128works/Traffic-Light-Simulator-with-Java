@@ -12,6 +12,7 @@ public class Main {
             if (selection == 0) {
                 break;
             }
+//            textUI.clearOutput();
         }
 
     }

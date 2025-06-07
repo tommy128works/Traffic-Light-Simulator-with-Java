@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TextUI {
@@ -56,6 +57,8 @@ public class TextUI {
         return scanner.nextInt();
     }
 
+    // better naming is output textUI for selection
+    // the process service would be part of the logic controller
     public void processSelection(int selection) {
         switch (selection) {
             case 1:
@@ -71,9 +74,21 @@ public class TextUI {
                 System.out.println("Bye!");
                 break;
             default:
-                System.out.println("No option selected");
+                System.out.println("Incorrect option");
         }
+    }
 
+    public void clearOutput() {
+        scanner.nextLine();
+
+        // Doesn't work in IntelliJ IDEA
+//        try {
+//            var clearCommand = System.getProperty("os.name").contains("Windows")
+//                    ? new ProcessBuilder("cmd", "/c", "cls")
+//                    : new ProcessBuilder("clear");
+//            clearCommand.inheritIO().start().waitFor();
+//        }
+//        catch (IOException | InterruptedException e) {}
     }
 
 
